@@ -102,7 +102,27 @@
 
             setStorage : function ( keyName , keyValue ) {
                 //chrome.storage.set()
+                
+            },
 
+            extractInfo:function(){
+                var templateJson = [];
+                var obj = 
+                    {
+                        "title":"",
+                        "description":"",
+                        "language":"",
+                        "createdAt":"",
+                        "updatedAt":"",
+                        "html_url":"",
+                        "watchers":"",
+                        "watchers_count":"",
+                        "has_downloads":"",
+                        "has_issues":"",
+                        "has_wiki":"",
+                        "open_issues_count":"",
+                    };
+                templateJson.push(obj);
             }
         };
 
