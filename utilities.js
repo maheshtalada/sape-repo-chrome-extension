@@ -153,25 +153,27 @@
                 
             },
 
-            extractInfo:function(){
+             extractInfo:function(rawJson){
+               /* console.log("calling the extractInfo"+JSON.stringify(rawJson));*/
                 var templateJson = [];
-                var obj = 
+                for (var key in rawJson) {
+                    var obj = 
                     {
-                        "title":"",
-                        "description":"",
-                        "language":"",
-                        "createdAt":"",
-                        "updatedAt":"",
-                        "html_url":"",
-                        "watchers":"",
-                        "watchers_count":"",
-                        "has_downloads":"",
-                        "has_issues":"",
-                        "has_wiki":"",
-                        "open_issues_count":"",
+                        "title":rawJson[key]['name'],
+                        "description":rawJson[key]['description'],
+                        "language":rawJson[key]['language'],
+                        "createdAt":rawJson[key]['created_at'],
+                        "updatedAt":rawJson[key]['updated_at'],
+                        "html_url":rawJson[key]['html_url']
                     };
-                templateJson.push(obj);
+                    templateJson.push(obj);
+                }
+                //storing it in cjson.js                
+                var cjson = CJSON.stringify(templateJson);    
+                console.log(cjson);
+                console.log("previous length : "+templateJson.length+"new length :"+cjson.length);
             },
+
 
             refineJson : function ( getJsonData ) {
 			
