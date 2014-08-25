@@ -2,6 +2,8 @@
  * API's created with revealing modular pattern
  * Storage , Alaram , Notifications , Repo Sucker & Processed JSON
  * These Wrapper API's will be used for both Background Script & Content Scripts
+ * 
+ * 
  */
 
 ;(function ( Anonymous , chrome  ) {
@@ -177,8 +179,8 @@
 
             refineJson : function ( getJsonData ) {
 			
-			    // after refining save to local storage
-			
+			    // after refining save to local storage for update
+			 
 			    Anonymous.StorageAPI.setStorage(getJsonData);
             }
 			
@@ -186,7 +188,7 @@
 
     })();
 
-    // call alaram init function below
+        // call alaram init function below
 	
 	Anonymous.AlaramAPI.setAlaram(.01,.3);
 	Anonymous.StorageAPI.onStorageChange();
