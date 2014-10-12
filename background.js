@@ -1,6 +1,4 @@
-/* testing */
 
-/* testing2 */
 
 (function($, window, document, undefined) {
 
